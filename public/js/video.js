@@ -61,29 +61,29 @@ socket.on('log', function (array) {
 
 function sendMessage(message) {
   console.log('Client sending message: ', message);
-  socket.emit('message', message);
+  socket.emit('message', {message});
 }
 
 // This client receives a message
 socket.on('message', function (message) {
-  console.log('Client received message:', message);
-  if (message === 'got user media') {
+  console.log('Client received message:', message.message);
+  if (message.message === 'got user media') {
     maybeStart();
-  } else if (message.type === 'offer') {
+  } else if (message.message.type === 'offer') {
     if (!isInitiator && !isStarted) {
       maybeStart();
     }
-    pc.setRemoteDescription(new RTCSessionDescription(message));
+    pc.setRemoteDescription(new RTCSessionDescription(message.message));
     doAnswer();
-  } else if (message.type === 'answer' && isStarted) {
-    pc.setRemoteDescription(new RTCSessionDescription(message));
-  } else if (message.type === 'candidate' && isStarted) {
+  } else if (message.message.type === 'answer' && isStarted) {
+    pc.setRemoteDescription(new RTCSessionDescription(message.message));
+  } else if (message.message.type === 'candidate' && isStarted) {
     var candidate = new RTCIceCandidate({
-      sdpMLineIndex: message.label,
-      candidate: message.candidate
+      sdpMLineIndex: message.message.label,
+      candidate: message.message.candidate
     });
     pc.addIceCandidate(candidate);
-  } else if (message === 'bye' && isStarted) {
+  } else if (message.message === 'bye' && isStarted) {
     handleRemoteHangup();
   }
 });

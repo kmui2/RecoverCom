@@ -1,5 +1,6 @@
 
 let socket = io.connect();
+localStorage.clear();
 $(document).ready(function(){
     $("#login").click(function(){
         let user = {

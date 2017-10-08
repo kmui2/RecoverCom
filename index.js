@@ -46,6 +46,10 @@ io.sockets.on('connection', function(socket) {
     socket.broadcast.emit('message', message);
   });
 
+  socket.on('get-streams', function() {
+
+  })
+
   socket.on('enter', function(user) {
     log('Patient ' + user.name + ' in room ' + user.room + 'has entered.');
     console.log('Patient ' + user.name + ' in room ' + user.room + 'has entered.');
@@ -59,10 +63,13 @@ io.sockets.on('connection', function(socket) {
     log('Received request to create or join room ' + room);
 
     var numClients = io.sockets.sockets.length;
+    // console.log(Object.keys(io.sockets.adapter.rooms));
+    // console.log(room)
     // var numClients = 0;
     // if (io.adapter.rooms && io.adapter.rooms[room])
     //   numClients = Object(io.adapter.rooms[room]).length;
     console.log(numClients);
+
     log('Room ' + room + ' now has ' + numClients + ' client(s)');
 
     if (numClients === 1) {
