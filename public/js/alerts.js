@@ -5,7 +5,7 @@ $(document).ready(function(){
         console.log('Client said ' + data);
         $('#alerts').html($('#alerts').html() + 
         `
-        <p> data </p>
+        <p> ${data} </p>
         `);
     })
 
