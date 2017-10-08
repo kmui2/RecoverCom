@@ -5,19 +5,19 @@ $(document).ready(function(){
     if (name && room)
         $('#welcome-message').html('<h3>Welcome '+name+'! <br>(Room '+room+')</h3>');
     $('#bathroom').click(function () {
-        socket.emit('message', 'Bathroom');
+        socket.emit('message', {name,room,message:'Bathroom'});
         alert('Your message "Bathroom" has been successfully sent!');
     });
     $('#dressing').click(function () {
-        socket.emit('message', 'Dressing');
+        socket.emit('message', {name,room,message:'Dressing'});
         alert('Your message "Dressing" has been successfully sent!');
     })
     $('#transfer').click(function () {
-        socket.emit('message', 'Transfer');
+        socket.emit('message', {name,room,message:'Transfer'});
         alert('Your message "Transfer" has been successfully sent!');
     })
     $('#hygiene').click(function () {
-        socket.emit('message', 'Hygiene');
+        socket.emit('message', {name,room,message:'Hygiene'});
         alert('Your message "Hygiene" has been successfully sent!');
     })
     $('#other').click(function () {

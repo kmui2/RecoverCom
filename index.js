@@ -40,8 +40,8 @@ io.sockets.on('connection', function(socket) {
   }
 
   socket.on('message', function(message) {
-    log('Client said: ', message);
-    console.log('Client said: ', message);
+    log(message.name + ' in room '+message.room+ ' said: ', message.message);
+    console.log(message.name + ' in room '+message.room+ ' said: ', message.message);
     // for a real app, would be room-only (not broadcast)
     socket.broadcast.emit('message', message);
   });

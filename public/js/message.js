@@ -9,7 +9,7 @@ $(document).ready(function(){
         let message = $('#message').val();
         // console.log(user);
         if (message != '') {
-            socket.emit('message', message);
+            socket.emit('message', {name, room, message});
             alert('Your message "'+message+'" has been successfully sent!');
             $('#message').val('');
             //  $(location).attr('href', 'dashboard.html')
