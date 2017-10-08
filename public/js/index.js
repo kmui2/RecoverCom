@@ -1,4 +1,5 @@
 
+let socket = io.connect();
 $(document).ready(function(){
     $("#login").click(function(){
         let user = {
@@ -6,7 +7,11 @@ $(document).ready(function(){
             room: $('#room').val()
         }
         console.log(user);
-        if (user.name !='' && user.room!='')
-            $(location).attr('href', 'dashboard.html')
+        if (user.name !='' && user.room!='') {
+            socket.emit('enter', user);
+            // $(location).attr('href', 'dashboard.html')
+        }
     });
+    
+    
 });

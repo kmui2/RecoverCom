@@ -47,8 +47,10 @@ io.sockets.on('connection', function(socket) {
 
   socket.on('enter', function(user) {
     log('Patient ' + user.name + ' in room ' + user.room + 'has entered.');
+    console.log('Patient ' + user.name + ' in room ' + user.room + 'has entered.');
     socket.user = user;
     users.push(socket.user);
+    console.log(users);
     socket.broadcast.emit('entered', socket.user);
   })
 
