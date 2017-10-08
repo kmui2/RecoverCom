@@ -17,6 +17,7 @@ $(document).ready(function(){
         alert('Your message "Hygiene" has been successfully sent!');
     })
     $('#other').click(function () {
+        console.log("hello");
         $(location).attr('href', 'message.html')
     })
 });
