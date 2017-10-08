@@ -13,7 +13,7 @@ $(document).ready(function(){
 
         <div class="alert alert-dismissible alert-warning">
         <button class="close" type="button" data-dismiss="alert">&times;</button>
-        <p> Tend to resident's needs. <p>
+        <p> Tend to Resident's Needs. <p>
       </div>
     
       <div class="alert alert-dismissible alert-success">
