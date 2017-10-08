@@ -24,10 +24,10 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="dashboard.html">Dashboard</a>
+                    <a href="dashboard.html" rel="keep-params">Dashboard</a>
                 </li>
                 <li class="sidebar-brand">
-                    <a href="video.html">Video</a>
+                    <a href="video.html" rel="keep-params">Video</a>
                 </li>
             </ul>
         </div>
@@ -39,12 +39,14 @@
             <div class="container-fluid">
 
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
-                <h1>Hello!</h1>
+                <div id="welcome-message">Hello!</div>
                 <h1>Tell Us What You Need</h1>
 
                 <form id="form" class="form-signin">       
                     <h2 class="col-xs-8 form-signin-heading">Type Your Message Below</h2>
+                    <br>
                     <input id="message" type="text" class="form-control" name="message" placeholder="message" required="" autofocus="" />
+                    <br>
                     <a id="send" class="btn btn-lg btn-primary btn-block" type="submit">Send</a>   
                 </form>
             </div>
