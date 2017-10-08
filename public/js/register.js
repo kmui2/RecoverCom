@@ -12,7 +12,7 @@ $(document).ready(function(){
         console.log(user);
         if (user.facilityId && user.email && user.firstName && user.lastName && user.username && user.password) {
             $.ajax({
-                url: "http://localhost:8079/users/register",
+                url: 'http://'+document.domain+":8079/users/register",
                 type: "POST",
                 contentType: "application/json",
                 xhrFields: {

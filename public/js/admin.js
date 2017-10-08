@@ -9,7 +9,7 @@ $(document).ready(function(){
         if (user.username != '' && user.password !='') {
             console.log('hi')
             $.ajax({
-                url: "http://localhost:8079/users/authenticate",
+                url: 'http://'+document.domain+":8079/users/authenticate",
                 type: "POST",
                 contentType: "application/json",
                 xhrFields: {
