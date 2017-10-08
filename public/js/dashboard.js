@@ -22,7 +22,7 @@ $(document).ready(function(){
     })
     $('#other').click(function () {
         console.log("hello");
-        $(location).attr('href', 'message.html')
+        $(location).attr('href', 'message.html?name='+name+'&room='+room)
     })
 });
 
