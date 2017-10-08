@@ -9,7 +9,7 @@ $(document).ready(function(){
         alert('Your message "Dressing" has been successfully sent!');
     })
     $('#transfer').click(function () {
-        socket.emit('message', 'transfer');
+        socket.emit('message', 'Transfer');
         alert('Your message "Transfer" has been successfully sent!');
     })
     $('#hygiene').click(function () {

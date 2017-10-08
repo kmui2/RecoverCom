@@ -27,7 +27,7 @@ $(document).ready(function(){
               </div>`
                 break;
 
-            case "Hygeine":
+            case "Hygiene":
                 messageHtml = `<div class="alert alert-dismissible alert-warning">
                 <button class="close" type="button" data-dismiss="alert">&times;</button>
                 <p> Assist With Personal Hygeine <p>
