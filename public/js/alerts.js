@@ -8,7 +8,7 @@ $(document).ready(function(){
             case "Dressing": 
                 messageHtml = `<div class="alert alert-dismissible alert-success">
                 <button class="close" type="button" data-dismiss="alert">&times;</button>
-                <p> Assist ${message.name} Resident With Dressing in room ${message.room}.</p>
+                <p> Assist ${message.name} With Dressing in room ${message.room}.</p>
               </div>`
                 break; 
 
@@ -16,7 +16,7 @@ $(document).ready(function(){
                 messageHtml = `<div class="alert alert-dismissible alert-danger">
                 <button class="close" type="button" data-dismiss="alert">&times;</button>
                 <h4>Warning!</h4>
-                <p> Assist ${message.name} Resident With Bathroom in room ${message.room} <strong>ASAP!</strong> </p>
+                <p> Assist ${message.name} With Bathroom in room ${message.room} <strong>ASAP!</strong> </p>
               </div>`
                 break;
 
