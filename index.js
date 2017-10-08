@@ -57,8 +57,8 @@ io.sockets.on('connection', function(socket) {
 
     var numClients = io.sockets.sockets.length;
     // var numClients = 0;
-    // if (io.sockets.adapter.rooms[room])
-    //   numClients = io.sockets.adapter.rooms[room];
+    // if (io.adapter.rooms && io.adapter.rooms[room])
+    //   numClients = Object(io.adapter.rooms[room]).length;
     console.log(numClients);
     log('Room ' + room + ' now has ' + numClients + ' client(s)');
 
@@ -90,11 +90,14 @@ io.sockets.on('connection', function(socket) {
   });
 
   socket.on('bye', function(){
+    console.log('received bye');
+  });
+
+  socket.on('disconnect', function() {
     if (!socket.username) return;
     users.splice(users.indexOf(socket.user), 1);
-    console.log('received bye');
     connections.splice(connections.indexOf(socket), 1);
     console.log('Disconnected: %s sockets connected', connections.length);
-  });
+  })
 
 });
