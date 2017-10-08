@@ -9,7 +9,7 @@ $(document).ready(function(){
         console.log(user);
         if (user.name !='' && user.room!='') {
             socket.emit('enter', user);
-            // $(location).attr('href', 'dashboard.html')
+             $(location).attr('href', 'dashboard.html')
         }
     });
     
